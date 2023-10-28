@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/update"
+        android:title="Update"
+        android:icon="@drawable/updateicon"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/delete"
+        android:title="delete"
+        android:icon="@drawable/delete_icon"
+        app:showAsAction="always"/>
+
+</menu>

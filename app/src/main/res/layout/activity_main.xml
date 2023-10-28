@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewGraph"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintBottom_toTopOf="@id/recycleView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/graph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cardViewGraph"
+            app:layout_constraintStart_toStartOf="@+id/cardViewGraph"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewGraph"
+            tools:itemCount="2"
+            tools:listitem="@layout/expense_row" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#68F3F3F3"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/incomeList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/income"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/add"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/incomeListText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg_drawable"
+            android:elevation="8dp"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="8dp"
+            android:text="Income List"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/incomeList"
+            app:layout_constraintEnd_toStartOf="@+id/incomeList"
+            app:layout_constraintTop_toTopOf="@+id/incomeList" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/expenseList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/expense"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/incomeList"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/expenseListText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg_drawable"
+            android:elevation="8dp"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="8dp"
+            android:text="Expense List"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/expenseList"
+            app:layout_constraintEnd_toStartOf="@+id/expenseList"
+            app:layout_constraintTop_toTopOf="@+id/expenseList" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addIncome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/add_icon"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/expenseList"
+            app:layout_constraintEnd_toEndOf="@+id/expenseList"
+            app:layout_constraintStart_toStartOf="@+id/expenseList" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addIncomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg_drawable"
+            android:elevation="8dp"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="8dp"
+            android:text="Add Income"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/addIncome"
+            app:layout_constraintEnd_toStartOf="@+id/addIncome"
+            app:layout_constraintTop_toTopOf="@+id/addIncome" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/expense_icon"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/addIncome"
+            app:layout_constraintEnd_toEndOf="@+id/addIncome"
+            app:layout_constraintStart_toStartOf="@+id/addIncome" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addExpenseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg_drawable"
+            android:elevation="8dp"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="8dp"
+            android:text="Add Expense"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/addExpense"
+            app:layout_constraintEnd_toStartOf="@+id/addExpense"
+            app:layout_constraintTop_toTopOf="@+id/addExpense" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Expense Manager</string>
+    <string name="currency">Rs</string>
+    <string name="add_income">Add Income</string>
+    <string name="add_expenses">Add Expenses</string>
+    <string name="are_you_sure_you_want_to_delete_n_this_note">Are You Sure You Want To Delete \n This Entry</string>
+    <string name="are_you_sure_you_want_to_update_n_this_entry">Are You Sure You Want To Update \n This Entry</string>
+</resources>
